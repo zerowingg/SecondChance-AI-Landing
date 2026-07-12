@@ -24,7 +24,6 @@ export default function Contact() {
       </div>
 
       <div className="relative mx-auto flex max-w-content flex-col items-center gap-10 text-center">
-
         {/* SecondChance AI Logo */}
         <div className="mx-auto -mb-2">
           <img
@@ -44,8 +43,8 @@ export default function Contact() {
 
         <p className="max-w-xl text-[15px] leading-relaxed text-cream/60">
           Be among the first to experience SecondChance AI. Leave your email
-          and we'll let you know the moment early access opens — no spam,
-          just an invitation when it's ready.
+          and we&apos;ll let you know the moment early access opens — no spam,
+          just an invitation when it&apos;s ready.
         </p>
 
         {submitted ? (
@@ -56,7 +55,7 @@ export default function Contact() {
           >
             <CheckCircle2 size={18} className="text-gold" />
             <span className="text-sm">
-              You're on the list. We'll be in touch soon.
+              You&apos;re on the list. We&apos;ll be in touch soon.
             </span>
           </motion.div>
         ) : (
@@ -98,10 +97,10 @@ export default function Contact() {
           </span>
 
           <a
-            href="mailto:hello@secondchance.ai"
+            href="mailto:secondchanceofficial@gmail.com"
             className="text-sm text-gold-light transition-colors hover:text-gold"
           >
-            hello@secondchance.ai
+            secondchanceofficial@gmail.com
           </a>
         </div>
       </div>
