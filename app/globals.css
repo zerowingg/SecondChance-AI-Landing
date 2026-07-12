@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #d4af37;
+  --gold-light: #e8c766;
+  --gold-deep: #96762a;
+  --ink: #0a0a0a;
+  --cream: #fbf8f2;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html,
+body {
+  background-color: var(--cream);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+}
+
+::selection {
+  background-color: var(--gold);
+  color: var(--ink);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--gold-light), var(--gold-deep));
+  border-radius: 999px;
+  border: 2px solid var(--cream);
+}
+
+/* Visible keyboard focus */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@layer components {
+  /* Eyebrow / section label */
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-widest2 text-gold-deep;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply h-px w-8 bg-gold;
+  }
+
+  /* Signature: the mending ring — a broken gold circle that closes.
+     Used as a recurring motif: hero centerpiece, section dividers, loaders. */
+  .mend-ring {
+    position: relative;
+  }
+  .mend-ring svg {
+    display: block;
+  }
+  .mend-ring circle {
+    fill: none;
+    stroke: url(#mendGoldStroke);
+  }
+
+  /* Glass panel */
+  .glass {
+    @apply relative border border-white/40 bg-white/50 backdrop-blur-xl;
+  }
+  .glass-dark {
+    @apply relative border border-gold/15 bg-white/[0.04] backdrop-blur-xl;
+  }
+
+  /* Gold button */
+  .btn-gold {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gold-gradient px-8 py-4 text-sm font-semibold tracking-wide text-ink shadow-gold transition-all duration-300;
+  }
+  .btn-gold:hover {
+    @apply shadow-gold-lg;
+    transform: translateY(-2px);
+  }
+  .btn-gold:active {
+    transform: translateY(0px);
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 bg-transparent px-8 py-4 text-sm font-semibold tracking-wide text-ink transition-all duration-300 hover:border-gold hover:bg-gold/5;
+  }
+
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/5 px-8 py-4 text-sm font-semibold tracking-wide text-cream backdrop-blur-sm transition-all duration-300 hover:border-gold hover:bg-white/10;
+  }
+
+  /* Card */
+  .card-premium {
+    @apply relative rounded-[28px] border border-gold/15 bg-white shadow-premium transition-all duration-500;
+  }
+  .card-premium:hover {
+    @apply shadow-gold-lg -translate-y-1.5 border-gold/35;
+  }
+
+  .section-pad {
+    @apply px-6 py-24 sm:px-10 md:py-32;
+  }
+
+  .hairline {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-gold/40 to-transparent;
+  }
+}
