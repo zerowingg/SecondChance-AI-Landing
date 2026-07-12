@@ -3,7 +3,6 @@
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Mail } from "lucide-react";
-import MendRing from "@/components/ui/MendRing";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -16,26 +15,37 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="relative overflow-hidden bg-ink-gradient section-pad">
+    <section
+      id="contact"
+      className="relative overflow-hidden bg-ink-gradient section-pad"
+    >
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 bg-radial-fade" />
       </div>
 
       <div className="relative mx-auto flex max-w-content flex-col items-center gap-10 text-center">
+
+        {/* SecondChance AI Logo */}
         <div className="mx-auto -mb-2">
-          <MendRing size={72} strokeWidth={2} gapDeg={50} />
+          <img
+            src="/Logo/logo.png"
+            alt="SecondChance AI Logo"
+            className="mx-auto h-[72px] w-[72px] object-contain drop-shadow-[0_0_12px_rgba(201,162,39,0.35)]"
+          />
         </div>
 
         <span className="eyebrow justify-center text-gold-light">
           Join The Waitlist
         </span>
+
         <h2 className="max-w-2xl font-display text-[clamp(2rem,4.5vw,3.25rem)] font-semibold leading-[1.1] text-cream">
           Your second chance starts with one step.
         </h2>
+
         <p className="max-w-xl text-[15px] leading-relaxed text-cream/60">
           Be among the first to experience SecondChance AI. Leave your email
-          and we&rsquo;ll let you know the moment early access opens — no spam,
-          just an invitation when it&rsquo;s ready.
+          and we'll let you know the moment early access opens — no spam,
+          just an invitation when it's ready.
         </p>
 
         {submitted ? (
@@ -45,7 +55,9 @@ export default function Contact() {
             className="glass-dark flex items-center gap-3 rounded-full px-7 py-4 text-cream"
           >
             <CheckCircle2 size={18} className="text-gold" />
-            <span className="text-sm">You&rsquo;re on the list. We&rsquo;ll be in touch soon.</span>
+            <span className="text-sm">
+              You're on the list. We'll be in touch soon.
+            </span>
           </motion.div>
         ) : (
           <form
@@ -54,6 +66,7 @@ export default function Contact() {
           >
             <div className="glass-dark flex flex-1 items-center gap-3 rounded-full px-5 py-4">
               <Mail size={16} className="text-gold/70" />
+
               <input
                 type="email"
                 required
@@ -64,8 +77,13 @@ export default function Contact() {
                 className="w-full bg-transparent text-sm text-cream placeholder:text-cream/35 focus:outline-none"
               />
             </div>
-            <button type="submit" className="btn-gold group justify-center">
+
+            <button
+              type="submit"
+              className="btn-gold group justify-center"
+            >
               Notify Me
+
               <ArrowRight
                 size={16}
                 className="transition-transform duration-300 group-hover:translate-x-1"
@@ -75,7 +93,10 @@ export default function Contact() {
         )}
 
         <div className="mt-6 flex flex-col items-center gap-2 text-cream/45">
-          <span className="text-xs uppercase tracking-widest2">Or reach out directly</span>
+          <span className="text-xs uppercase tracking-widest2">
+            Or reach out directly
+          </span>
+
           <a
             href="mailto:hello@secondchance.ai"
             className="text-sm text-gold-light transition-colors hover:text-gold"

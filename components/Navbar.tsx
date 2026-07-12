@@ -49,14 +49,11 @@ export default function Navbar() {
             className="flex items-center gap-3"
           >
             <span className="relative flex h-11 w-11 items-center justify-center">
-              <Image
-                src="/logo/logo.png"
-                alt="SecondChance AI Logo"
-                width={44}
-                height={44}
-                className="object-contain"
-                priority
-              />
+              <img
+              src="/Logo/logo.png"
+              alt="SecondChance AI Logo"
+              className="h-11 w-11 object-contain"
+            />
             </span>
 
             <span className="font-display text-lg font-semibold tracking-tight text-ink">
